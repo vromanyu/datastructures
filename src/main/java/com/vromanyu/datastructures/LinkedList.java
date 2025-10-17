@@ -4,10 +4,11 @@ import java.util.Objects;
 
 /**
  * Implementation of a generic LinkedList
+ *
  * @author vromanyu
  * @version 1.0
  */
-public class LinkedList <T extends Number> {
+public class LinkedList<T extends Number> {
 
     private Node<T> head;
     private Node<T> tail;
@@ -19,35 +20,39 @@ public class LinkedList <T extends Number> {
         length = 0;
     }
 
-    public LinkedList(T value){
+    public LinkedList(T value) {
         Node<T> node = new Node<>(value);
         head = node;
         tail = node;
         length = 1;
     }
 
-    public void printList(){
+    public void printList() {
         Node<T> temp = head;
-        while(temp != null){
-            System.out.print(temp.value+" ");
+        while (temp != null) {
+            System.out.print(temp.value + " ");
             temp = temp.next;
         }
         System.out.println();
     }
 
-    public void printHead(){
-        System.out.println("Head: " + head.value);
+    public void printHead() {
+        if (head != null) {
+            System.out.println("Head: " + head.value);
+        }
     }
 
-    public void printTail(){
-        System.out.println("Tail: " + tail.value);
+    public void printTail() {
+        if (tail != null) {
+            System.out.println("Tail: " + tail.value);
+        }
     }
 
-    public void printLength(){
+    public void printLength() {
         System.out.println("Length: " + length);
     }
 
-    private static class Node <T extends Number> {
+    private static class Node<T extends Number> {
 
         private T value;
         private Node<T> next;
