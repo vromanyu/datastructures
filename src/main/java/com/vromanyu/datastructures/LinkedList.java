@@ -35,6 +35,18 @@ public class LinkedList <T extends Number> {
         System.out.println();
     }
 
+    public void printHead(){
+        System.out.println("Head: " + head.value);
+    }
+
+    public void printTail(){
+        System.out.println("Tail: " + tail.value);
+    }
+
+    public void printLength(){
+        System.out.println("Length: " + length);
+    }
+
     private static class Node <T extends Number> {
 
         private T value;
