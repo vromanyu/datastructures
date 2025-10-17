@@ -27,6 +27,17 @@ public class LinkedList<T extends Number & Comparable<T>> {
         length = 1;
     }
 
+    public void append(T value) {
+        Node<T> node = new Node<>(value);
+        if (length == 0) {
+            head = node;
+        } else {
+            tail.setNext(node);
+        }
+        tail = node;
+        length++;
+    }
+
     public void printList() {
         Node<T> temp = head;
         while (temp != null) {
