@@ -26,6 +26,15 @@ public class LinkedList <T extends Number> {
         length = 1;
     }
 
+    public void printList(){
+        Node<T> temp = head;
+        while(temp != null){
+            System.out.print(temp.value+" ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
     private static class Node <T extends Number> {
 
         private T value;
