@@ -8,7 +8,7 @@ import java.util.Objects;
  * @author vromanyu
  * @version 1.0
  */
-public class LinkedList<T extends Number> {
+public class LinkedList<T extends Number & Comparable<T>> {
 
     private Node<T> head;
     private Node<T> tail;
@@ -52,7 +52,19 @@ public class LinkedList<T extends Number> {
         System.out.println("Length: " + length);
     }
 
-    private static class Node<T extends Number> {
+    public int getLength() {
+        return length;
+    }
+
+    public Node<T> getTail() {
+        return tail;
+    }
+
+    public Node<T> getHead() {
+        return head;
+    }
+
+    public static class Node<T extends Number & Comparable<T>> {
 
         private T value;
         private Node<T> next;
